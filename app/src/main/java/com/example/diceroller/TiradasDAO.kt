@@ -10,7 +10,7 @@ interface TiradasDAO {
     @Insert
     suspend fun insertar(entidad: Tiradas)
 
-    @Query("SELECT * FROM Tiradas")
+    @Query("SELECT * FROM Tiradas order by Fecha desc")
     fun getAll(): LiveData<List<Tiradas>>
 
 
