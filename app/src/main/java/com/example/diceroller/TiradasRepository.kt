@@ -10,4 +10,10 @@ class TiradasRepository(private val tiradasDAO: TiradasDAO) {
     suspend fun insertTirada(tirada: Tiradas) {
         tiradasDAO.insertar(tirada)
     }
+
+    suspend fun clearAll() {
+        tiradasDAO.clearAll()
+    }
+
+
 }

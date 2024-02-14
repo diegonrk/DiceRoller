@@ -7,10 +7,19 @@
 
     <Button
         android:id="@+id/btnRoll"
-        android:layout_width="152dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="250dp"
 
         android:text="@string/roll" />
+
+    <Button
+        android:id="@+id/btnClearList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+
+
+        android:text="Limpiar lista" />
 
 </FrameLayout>

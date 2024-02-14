@@ -42,6 +42,15 @@ class TwoDicesViewModel(private val tiradasDao: TiradasDAO) : ViewModel() {
         guardarTirada(tirada)
     }
 
+
+    fun clearAll(){
+        viewModelScope.launch {
+            withContext(Dispatchers.IO) {
+                tiradasDao.clearAll()
+            }
+        }
+    }
+
     private fun guardarTirada(tirada: Tiradas) {
         viewModelScope.launch {
             withContext(Dispatchers.IO) {

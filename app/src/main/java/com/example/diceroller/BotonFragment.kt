@@ -11,6 +11,7 @@ import com.example.diceroller.TiradasDataBase
 import com.example.diceroller.TwoDicesViewModel
 import com.example.diceroller.TwoDicesViewModelFactory
 import com.example.diceroller.databinding.FragmentBotonBinding
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 
 class BotonFragment : Fragment() {
@@ -39,5 +40,26 @@ class BotonFragment : Fragment() {
         binding.btnRoll.setOnClickListener {
             dices.rollDices()
         }
+
+        binding.btnClearList.setOnClickListener {
+
+            showClearListConfirmationDialog()
+
+
+
+        }
+    }
+
+    private fun showClearListConfirmationDialog() {
+        MaterialAlertDialogBuilder(requireContext())
+            .setTitle("Vaciar lista")
+            .setMessage("¿Estás seguro de que quieres vaciar la lista de tiradas?")
+            .setPositiveButton("Sí") { _, _ ->
+                dices.clearAll()
+            }
+            .setNegativeButton("No") { dialog, _ ->
+                dialog.dismiss()
+            }
+            .show()
     }
 }

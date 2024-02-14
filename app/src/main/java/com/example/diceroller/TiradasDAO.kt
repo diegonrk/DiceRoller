@@ -10,8 +10,11 @@ interface TiradasDAO {
     @Insert
     suspend fun insertar(entidad: Tiradas)
 
-    @Query("SELECT * FROM Tiradas order by Fecha desc")
+    @Query("SELECT * FROM Tiradas order by id desc")
     fun getAll(): LiveData<List<Tiradas>>
+
+    @Query("DELETE FROM Tiradas")
+    suspend fun clearAll()
 
 
 }
